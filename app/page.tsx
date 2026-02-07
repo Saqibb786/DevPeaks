@@ -2,6 +2,7 @@ import { Hero } from "@/components/sections/hero";
 import { ValueProposition } from "@/components/sections/value-proposition";
 import { ServicesOverview } from "@/components/sections/services-overview";
 import { WhyUs } from "@/components/sections/why-us";
+import { Reviews } from "@/components/sections/reviews";
 import { CTA } from "@/components/sections/cta";
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
       <ValueProposition />
       <ServicesOverview />
       <WhyUs />
+      <Reviews />
       <CTA />
     </main>
   );
