@@ -4,6 +4,7 @@ import { ServicesOverview } from "@/components/sections/services-overview";
 import { WhyUs } from "@/components/sections/why-us";
 import { Reviews } from "@/components/sections/reviews";
 import { CTA } from "@/components/sections/cta";
+import { FAQ } from "@/components/sections/faq";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <WhyUs />
       <Reviews />
       <CTA />
+      <FAQ />
     </main>
   );
 }
