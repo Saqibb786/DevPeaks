@@ -1,0 +1,54 @@
+import Link from "next/link";
+import { Container } from "@/components/ui/container";
+
+export function Footer() {
+  return (
+    <footer className="border-t border-white/10 bg-black/90 py-12 md:py-16">
+      <Container>
+        <div className="grid gap-8 md:grid-cols-4 lg:grid-cols-5">
+          <div className="md:col-span-2">
+            <Link href="/" className="text-2xl font-bold tracking-tighter text-white">
+              DevPeaks<span className="text-blue-500">.</span>
+            </Link>
+            <p className="mt-4 max-w-xs text-sm text-gray-400">
+              Premium digital solutions for ambitious brands. We build the future of the web.
+            </p>
+          </div>
+          
+          <div>
+            <h4 className="mb-4 text-sm font-semibold text-white">Services</h4>
+            <ul className="space-y-2 text-sm text-gray-400">
+              <li><Link href="/services" className="hover:text-white transition-colors">Web Development</Link></li>
+              <li><Link href="/services" className="hover:text-white transition-colors">AI Solutions</Link></li>
+              <li><Link href="/services" className="hover:text-white transition-colors">Digital Strategy</Link></li>
+              <li><Link href="/services" className="hover:text-white transition-colors">Branding</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="mb-4 text-sm font-semibold text-white">Company</h4>
+             <ul className="space-y-2 text-sm text-gray-400">
+              <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
+              <li><Link href="/projects" className="hover:text-white transition-colors">Projects</Link></li>
+              <li><Link href="/process" className="hover:text-white transition-colors">Process</Link></li>
+              <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="mb-4 text-sm font-semibold text-white">Socials</h4>
+             <ul className="space-y-2 text-sm text-gray-400">
+              <li><a href="https://instagram.com/devpeaks" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</a></li>
+              <li><a href="https://facebook.com/devpeaks" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Facebook</a></li>
+              <li><a href="https://linkedin.com/company/devpeaks" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div className="mt-12 border-t border-white/5 pt-8 text-center text-xs text-gray-500">
+          © {new Date().getFullYear()} DevPeaks. All rights reserved.
+        </div>
+      </Container>
+    </footer>
+  );
+}
