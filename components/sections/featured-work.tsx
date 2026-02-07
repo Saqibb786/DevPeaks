@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { ProjectImage } from "@/components/ui/project-image";
 
 const featuredProjects = [
   {
@@ -75,12 +76,14 @@ export function FeaturedWork() {
                     transition={{ delay: index * 0.2 }}
                 >
                     <div className="block group cursor-default">
-                        <div className={`relative overflow-hidden rounded-3xl aspect-[16/9] mb-6 border border-white/10 bg-gradient-to-br ${project.color}`}>
-                            {/* Placeholder for actual image or creative abstract art */}
-                            <div className="absolute inset-0 flex items-center justify-center">
-                                <span className="text-2xl font-bold text-white/20 uppercase tracking-widest">{project.title}</span>
-                            </div>
-                            
+                        <div className="relative overflow-hidden rounded-3xl aspect-[16/9] mb-6 group-hover:scale-[1.02] transition-transform duration-500">
+                             <ProjectImage 
+                                title={project.title} 
+                                // Map complex categories to simple ones for pattern generation
+                                category={project.category.includes("AI") ? "AI" : "Web App"} 
+                                color={project.color} 
+                             />
+                             
                             {/* Hover Overlay */}
                             <div className="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                         </div>

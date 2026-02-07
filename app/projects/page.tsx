@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { ArrowUpRight, Filter } from "lucide-react";
 import { useState } from "react";
+import { ProjectImage } from "@/components/ui/project-image";
 
 // Placeholder projects
 const allProjects = [
@@ -129,10 +130,12 @@ export default function ProjectsPage() {
                 <div className="group h-full block cursor-default">
                     <div className={`relative h-full rounded-3xl border border-white/10 bg-[#0A0A0A] overflow-hidden flex flex-col`}>
                         {/* Image Area */}
-                        <div className={`aspect-[4/3] relative overflow-hidden bg-gradient-to-br ${project.color}`}>
-                             <div className="absolute inset-0 flex items-center justify-center">
-                                <span className="text-white/20 font-bold text-2xl uppercase tracking-widest">{project.category}</span>
-                             </div>
+                        <div className="aspect-[4/3] relative overflow-hidden group-hover:scale-105 transition-transform duration-500">
+                             <ProjectImage 
+                                title={project.title} 
+                                category={project.category} 
+                                color={project.color} 
+                             />
                              
                              {/* Hover Overlay */}
                              <div className="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
