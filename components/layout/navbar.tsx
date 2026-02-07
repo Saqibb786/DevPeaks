@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
+import { PremiumGradientButton } from "@/components/ui/premium-gradient-button";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
@@ -48,9 +49,9 @@ export function Navbar() {
 
         <div className="flex items-center gap-4">
           <Link href="/contact">
-             <Button variant="primary" size="sm" className="hidden md:inline-flex">
+             <PremiumGradientButton className="hidden h-10 px-6 text-sm md:inline-flex">
               Get Started
-            </Button>
+            </PremiumGradientButton>
           </Link>
           {/* Mobile Menu Button Placeholder */}
           <button className="md:hidden text-white">

@@ -22,6 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
+        suppressHydrationWarning
         className={`${inter.className} antialiased bg-[#030712] text-white selection:bg-blue-500/30`}
       >
         <Navbar />
