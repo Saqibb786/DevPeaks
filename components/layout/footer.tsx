@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Container } from "@/components/ui/container";
+import { MapPin, Mail, Phone } from "lucide-react";
 
 export function Footer() {
   return (
@@ -13,6 +14,29 @@ export function Footer() {
             <p className="mt-4 max-w-xs text-sm text-gray-400">
               Premium digital solutions for ambitious brands. We build the future of the web.
             </p>
+            <ul className="mt-6 space-y-3 text-sm">
+              <li className="flex items-start gap-3 text-gray-400">
+                <MapPin className="w-5 h-5 text-blue-500 shrink-0 mt-0.5" />
+                <span>Lahore, Pakistan</span>
+              </li>
+              <li className="flex items-center gap-3 text-gray-400">
+                <Mail className="w-5 h-5 text-blue-500 shrink-0" />
+                <a href="mailto:devpeaks26@gmail.com" className="hover:text-white transition-colors">
+                  devpeaks26@gmail.com
+                </a>
+              </li>
+              <li className="flex items-center gap-3 text-gray-400">
+                <Phone className="w-5 h-5 text-blue-500 shrink-0" />
+                <div className="flex flex-col">
+                  <a href="tel:+923143147711" className="hover:text-white transition-colors">
+                    +92 314 3147711
+                  </a>
+                  <a href="tel:+923426621797" className="hover:text-white transition-colors">
+                    +92 342 6621797
+                  </a>
+                </div>
+              </li>
+            </ul>
           </div>
           
           <div>

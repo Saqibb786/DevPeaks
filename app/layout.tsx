@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 
 export const metadata: Metadata = {
-  title: "DevPeaks | Premium Digital Agency",
+  title: "DevPeaks | Digital Agency",
   description: "DevPeaks is a global digital agency specializing in high-performance web development, AI solutions, and digital strategy for startups and enterprises.",
   keywords: ["Digital Agency", "Web Development", "Next.js", "AI Solutions", "DevPeaks", "Saqib Ali Butt", "Abdullah Naveed"],
 };
