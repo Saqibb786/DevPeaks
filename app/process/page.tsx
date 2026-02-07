@@ -1,96 +1,150 @@
 "use client";
 
 import { Container } from "@/components/ui/container";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { Lightbulb, PenTool, Code2, Rocket, Search, ShieldCheck } from "lucide-react";
+import { useRef } from "react";
 
-const steps = [
+const processSteps = [
   {
-    number: "01",
-    title: "Discovery",
-    description: "We start by understanding your business, goals, and target audience. We ask the right questions to uncover the core problems and opportunities.",
+    icon: Search,
+    title: "Discovery & Strategy",
+    description: "We dive deep into your business goals, target audience, and market landscape to build a roadmap for success.",
+    details: ["Stakeholder Interviews", "Market Analysis", "Technical Feasibility"]
   },
   {
-    number: "02",
-    title: "Strategy",
-    description: "Based on our findings, we craft a tailored roadmap. This includes technical architecture, design direction, and a project timeline.",
+    icon: Lightbulb,
+    title: "Ideation & UX",
+    description: "Structuring the user journey. We create wireframes and user flows to ensure intuitive navigation and core functionality.",
+    details: ["Information Architecture", "Wireframing", "User Journey Mapping"]
   },
   {
-    number: "03",
-    title: "Design",
-    description: "Our designers create high-fidelity prototypes that bring your vision to life. We focus on user experience, ensuring every interaction is intuitive.",
+    icon: PenTool,
+    title: "UI Design",
+    description: "Crafting the visual identity. We design high-fidelity interfaces that align with your brand and captivate your users.",
+    details: ["Visual Systems", "High-Fidelity Mockups", "Interactive Prototypes"]
   },
   {
-    number: "04",
+    icon: Code2,
     title: "Development",
-    description: "We build your product using modern, scalable technologies. Our code is clean, documented, and built for performance.",
+    description: "Writing clean, scalable code. We build your product using modern tech stacks ensuring performance and security.",
+    details: ["Frontend & Backend", "API Integration", "Database Design"]
   },
   {
-    number: "05",
-    title: "Testing & QA",
-    description: "Rigorous testing ensures your product is bug-free and performs flawlessly across all devices and browsers.",
+    icon: ShieldCheck,
+    title: "QA & Testing",
+    description: "Rigorous testing across devices and scenarios to ensure a bug-free, smooth experience before launch.",
+    details: ["Performance Testing", "Security Audits", "Usability Testing"]
   },
   {
-    number: "06",
+    icon: Rocket,
     title: "Launch & Scale",
-    description: "We handle the deployment process to ensure a smooth launch. Post-launch, we help you measure success and scale your product.",
-  },
+    description: "Deploying to production. We monitor the launch and provide ongoing support to scale your product.",
+    details: ["CI/CD Deployment", "Analytics Setup", "Post-Launch Support"]
+  }
 ];
 
 export default function ProcessPage() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+      target: containerRef,
+      offset: ["start end", "end start"]
+  });
+
+  const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+
   return (
-    <main className="pt-24 pb-16">
-      <section className="py-20">
-        <Container>
-           <motion.div
+    <main className="pt-24 pb-16 bg-black min-h-screen">
+      
+      {/* Header */}
+      <section className="py-20 relative overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-900/10 rounded-full blur-[120px] pointer-events-none" />
+        <Container className="relative z-10 text-center">
+          <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center max-w-3xl mx-auto mb-20"
+            className="text-4xl md:text-6xl font-bold text-white mb-6"
           >
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl mb-6">
-              Our <span className="text-blue-500">Process</span>
-            </h1>
-            <p className="text-xl text-gray-400">
-              A proven workflow designed to deliver exceptional results, on time and within budget.
-            </p>
-          </motion.div>
+            How We <span className="text-blue-500">Build</span>
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="text-lg text-gray-400 max-w-2xl mx-auto"
+          >
+            From chaos to clarity. Our proven process ensures transparency, quality, and velocity at every stage of the product lifecycle.
+          </motion.p>
+        </Container>
+      </section>
 
-          <div className="relative">
-             {/* Central Line for Desktop */}
-            <div className="absolute left-[19px] top-0 bottom-0 w-0.5 bg-white/10 md:left-1/2 md:-translate-x-1/2" />
+      {/* Timeline Section */}
+      <section ref={containerRef} className="py-10 relative">
+        <Container>
+            <div className="relative max-w-4xl mx-auto">
+                {/* Center Line (hidden on mobile, visible on md) */}
+                <div className="absolute left-[20px] md:left-1/2 top-0 bottom-0 w-px bg-white/10 md:-translate-x-1/2">
+                    <motion.div 
+                        style={{ height: lineHeight }} 
+                        className="w-full bg-gradient-to-b from-blue-500 via-purple-500 to-blue-500 origin-top"
+                    />
+                </div>
 
-            <div className="space-y-12">
-              {steps.map((step, index) => (
-                <motion.div
-                  key={step.number}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className={`relative flex flex-col md:flex-row gap-8 md:gap-0 ${index % 2 === 0 ? "md:flex-row-reverse" : ""}`}
-                >
-                  {/* Content Side */}
-                  <div className="md:w-1/2 md:px-12">
-                     <div className={`p-8 rounded-2xl bg-white/5 border border-white/10 ${index % 2 === 0 ? "md:text-left" : "md:text-right"}`}>
-                        <div className={`text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500 mb-4 inline-block`}>
-                           {step.number}
-                        </div>
-                        <h3 className="text-2xl font-bold text-white mb-3">{step.title}</h3>
-                        <p className="text-gray-400">{step.description}</p>
-                     </div>
-                  </div>
+                <div className="space-y-16 md:space-y-24">
+                    {processSteps.map((step, index) => {
+                        const isEven = index % 2 === 0;
+                        return (
+                            <motion.div 
+                                key={step.title}
+                                initial={{ opacity: 0, y: 50 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, margin: "-100px" }}
+                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                                className={`relative flex flex-col md:flex-row items-start ${isEven ? 'md:flex-row-reverse' : ''}`}
+                            >
+                                {/* Center Dot */}
+                                <div className="absolute left-[20px] md:left-1/2 md:-translate-x-1/2 top-0 w-10 h-10 -translate-x-1/2 flex items-center justify-center z-10 bg-black rounded-full border border-white/10 shadow-xl shadow-black">
+                                    <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse" />
+                                </div>
 
-                  {/* Center Dot */}
-                  <div className="absolute left-0 top-8 md:left-1/2 md:-translate-x-1/2 flex items-center justify-center">
-                    <div className="h-10 w-10 rounded-full bg-black border-4 border-blue-500 z-10 box-content" />
-                  </div>
-
-                   {/* Empty Side for layout balance */}
-                   <div className="md:w-1/2" />
-                </motion.div>
-              ))}
+                                {/* Content Side */}
+                                <div className={`ml-16 md:ml-0 md:w-1/2 ${isEven ? 'md:pr-16 md:text-right' : 'md:pl-16'}`}>
+                                    <div className={`flex flex-col ${isEven ? 'md:items-end' : ''}`}>
+                                        <div className="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center border border-white/10 mb-4 text-blue-400">
+                                            <step.icon className="w-6 h-6" />
+                                        </div>
+                                        <h3 className="text-2xl font-bold text-white mb-3">{step.title}</h3>
+                                        <p className="text-gray-400 mb-4 leading-relaxed">{step.description}</p>
+                                        <ul className={`space-y-2 ${isEven ? 'md:justify-end' : ''}`}>
+                                            {step.details.map((detail, i) => (
+                                                <li key={i} className={`flex items-center text-sm text-gray-500 ${isEven ? 'md:flex-row-reverse' : ''}`}>
+                                                    <span className={`w-1.5 h-1.5 rounded-full bg-blue-500/50 mr-2 ${isEven ? 'md:mr-0 md:ml-2' : ''}`} />
+                                                    {detail}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                {/* Empty Side for Balance */}
+                                <div className="hidden md:block md:w-1/2" />
+                            </motion.div>
+                        );
+                    })}
+                </div>
             </div>
-          </div>
+        </Container>
+      </section>
+
+      {/* Footer CTA */}
+      <section className="py-24 text-center">
+        <Container>
+            <div className="p-8 md:p-12 rounded-3xl bg-gradient-to-b from-blue-900/20 to-black border border-white/10 relative overflow-hidden">
+                <div className="relative z-10">
+                    <h2 className="text-3xl font-bold text-white mb-6">Ready to start your journey?</h2>
+                    <p className="text-gray-400 mb-8 max-w-xl mx-auto">We&#39;ve got the process down to a science. All we need is your vision.</p>
+                </div>
+            </div>
         </Container>
       </section>
     </main>

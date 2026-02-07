@@ -1,5 +1,6 @@
 import { Hero } from "@/components/sections/hero";
 import { ValueProposition } from "@/components/sections/value-proposition";
+import { FeaturedWork } from "@/components/sections/featured-work";
 import { ServicesOverview } from "@/components/sections/services-overview";
 import { WhyUs } from "@/components/sections/why-us";
 import { Reviews } from "@/components/sections/reviews";
@@ -11,6 +12,7 @@ export default function Home() {
     <main className="flex min-h-screen flex-col">
       <Hero />
       <ValueProposition />
+      <FeaturedWork />
       <ServicesOverview />
       <WhyUs />
       <Reviews />

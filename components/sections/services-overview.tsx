@@ -42,7 +42,7 @@ const services = [
 
 export function ServicesOverview() {
   return (
-    <section className="bg-black/50 py-24 sm:py-32 backdrop-blur-sm">
+    <section className="bg-black/50 py-32 sm:py-40 backdrop-blur-sm">
       <Container>
         <div className="mb-16 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
           <div className="max-w-2xl">
@@ -61,7 +61,7 @@ export function ServicesOverview() {
           </Link>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
@@ -70,12 +70,12 @@ export function ServicesOverview() {
               transition={{ duration: 0.4, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className="h-full">
-                <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-white/5 text-blue-400">
-                  <service.icon className="h-5 w-5" />
+              <Card className="h-full p-8 sm:p-10 flex flex-col items-start gap-4">
+                <div className="mb-2 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-blue-500/10 text-blue-400">
+                  <service.icon className="h-6 w-6" />
                 </div>
-                <CardTitle>{service.title}</CardTitle>
-                <CardDescription>{service.description}</CardDescription>
+                <CardTitle className="text-xl sm:text-2xl">{service.title}</CardTitle>
+                <CardDescription className="text-base leading-relaxed">{service.description}</CardDescription>
               </Card>
             </motion.div>
           ))}

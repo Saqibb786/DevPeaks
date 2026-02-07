@@ -26,7 +26,7 @@ export function Navbar() {
     <motion.header
       className={cn(
         "fixed top-0 z-50 w-full transition-all duration-300",
-        isScrolled ? "bg-black/50 backdrop-blur-md border-b border-white/10 py-4" : "py-6 bg-transparent"
+        isScrolled ? "bg-black/60 backdrop-blur-xl border-b border-white/5 py-4 shadow-lg shadow-black/20" : "py-6 bg-transparent"
       )}
     >
       <Container className="flex items-center justify-between">
