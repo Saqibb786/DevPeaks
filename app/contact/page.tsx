@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Send, MessageCircle } from "lucide-react";
 import { FormEvent, useState } from "react";
 
 export default function ContactPage() {
@@ -55,8 +55,18 @@ export default function ContactPage() {
                   <Phone className="h-6 w-6 text-blue-500 mr-4 mt-1" />
                   <div>
                     <h3 className="font-semibold text-white">Call Us</h3>
-                    <p className="text-gray-400">Saqib Ali Butt: <a href="tel:+923143147711" className="hover:text-white transition-colors">+92 314 3147711</a></p>
-                    <p className="text-gray-400">Abdullah Naveed: <a href="tel:+923258686199" className="hover:text-white transition-colors">+92 325 8686199</a></p>
+                    <p className="text-gray-400"><a href="tel:+923143147711" className="hover:text-white transition-colors">+92 314 3147711</a></p>
+                    <p className="text-gray-400"><a href="tel:+923426621797" className="hover:text-white transition-colors">+92 342 6621797</a></p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <MessageCircle className="h-6 w-6 text-blue-500 mr-4 mt-1" />
+                  <div>
+                    <h3 className="font-semibold text-white">WhatsApp</h3>
+                    <a href="https://wa.me/message/UDMZO4FVKTXII1" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                      Chat on WhatsApp
+                    </a>
                   </div>
                 </div>
 

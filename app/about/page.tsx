@@ -57,49 +57,29 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* Partners / Team */}
+      {/* Our Culture */}
       <section className="py-24 bg-white/5">
         <Container>
-          <h2 className="text-3xl font-bold text-center text-white mb-16">Meet The Partners</h2>
-          <div className="grid gap-8 md:grid-cols-2 max-w-4xl mx-auto">
-            {/* Partner 1 */}
-            <motion.div
-               initial={{ opacity: 0, y: 20 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: true }}
-               className="group relative overflow-hidden rounded-2xl bg-[#0a0a0a] border border-white/10 p-8 text-center transition-colors hover:border-blue-500/50"
-            >
-               <div className="mx-auto mb-6 h-32 w-32 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 p-1">
-                 <div className="h-full w-full rounded-full bg-black/90 flex items-center justify-center text-2xl font-bold text-white">
-                   SB
-                 </div>
-               </div>
-               <h3 className="text-xl font-bold text-white">Saqib Ali Butt</h3>
-               <p className="text-blue-400 mb-4">Co-Founder & Partner</p>
-               <p className="text-sm text-gray-500">
-                 Visionary leader with a passion for scalable architecture and business growth.
-               </p>
-            </motion.div>
+          <div className="mx-auto max-w-4xl text-center">
+            <h2 className="text-3xl font-bold text-white mb-8">Built on Excellence</h2>
+            <p className="text-lg text-gray-400 mb-12">
+              At DevPeaks, we are more than just a team of developers. We are a collective of innovators, problem-solvers, and strategic thinkers. Our strength lies in our unified approach to tackling complex digital challenges.
+            </p>
+          </div>
 
-            {/* Partner 2 */}
-            <motion.div
-               initial={{ opacity: 0, y: 20 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: true }}
-               transition={{ delay: 0.2 }}
-               className="group relative overflow-hidden rounded-2xl bg-[#0a0a0a] border border-white/10 p-8 text-center transition-colors hover:border-blue-500/50"
-            >
-               <div className="mx-auto mb-6 h-32 w-32 rounded-full bg-gradient-to-br from-purple-500 to-blue-600 p-1">
-                 <div className="h-full w-full rounded-full bg-black/90 flex items-center justify-center text-2xl font-bold text-white">
-                   AN
-                 </div>
-               </div>
-               <h3 className="text-xl font-bold text-white">Abdullah Naveed</h3>
-               <p className="text-blue-400 mb-4">Co-Founder & Partner</p>
-               <p className="text-sm text-gray-500">
-                 Tech innovator focus on AI solutions and next-gen web technologies.
-               </p>
-            </motion.div>
+          <div className="grid gap-8 md:grid-cols-3">
+             <div className="p-6 rounded-xl bg-white/5 border border-white/5 backdrop-blur-sm">
+                <h3 className="text-xl font-semibold text-white mb-3">Innovation First</h3>
+                <p className="text-gray-400">We don't just follow trends; we set them. Our team is constantly exploring new technologies to give our clients a competitive edge.</p>
+             </div>
+             <div className="p-6 rounded-xl bg-white/5 border border-white/5 backdrop-blur-sm">
+                <h3 className="text-xl font-semibold text-white mb-3">Client-Centric</h3>
+                <p className="text-gray-400">Your success is our success. We view every project as a partnership, working closely with you to understand your goals and exceed expectations.</p>
+             </div>
+             <div className="p-6 rounded-xl bg-white/5 border border-white/5 backdrop-blur-sm">
+                <h3 className="text-xl font-semibold text-white mb-3">Global Standards</h3>
+                <p className="text-gray-400">Founded by Saqib Ali Butt and Abdullah Naveed, DevPeaks maintains world-class standards in code quality, design, and project management.</p>
+             </div>
           </div>
         </Container>
       </section>
