@@ -15,6 +15,7 @@ const services = [
   "Mobile Apps",
   "AI Solutions",
   "E-commerce",
+  "SEO",
   "Consulting"
 ];
 
@@ -261,15 +262,22 @@ Sender: ${formData.get('from_name')} (${formData.get('reply_to')})
                             </div>
                           </div>
 
+
+
                           {/* 2. Budget Section */}
                           <div className="space-y-4">
                              <label className="text-sm font-medium text-gray-400 uppercase tracking-wider">Project Budget (USD)</label>
-                             <div className="flex flex-wrap gap-3">
+                             <div className="flex flex-wrap gap-3 items-center">
                                 {budgets.map((budget) => (
                                   <button
                                     key={budget}
                                     type="button"
-                                    onClick={() => setSelectedBudget(budget)}
+                                    onClick={() => {
+                                      setSelectedBudget(budget);
+                                      // Clear custom input if a preset is selected, or we can keep it. 
+                                      // Better to treating custom as a separate state or just overrides.
+                                      // Let's simple check if it matches a preset.
+                                    }}
                                     className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 border ${
                                       selectedBudget === budget
                                         ? "bg-blue-600 text-white border-blue-600 shadow-lg shadow-blue-500/25"
@@ -279,6 +287,17 @@ Sender: ${formData.get('from_name')} (${formData.get('reply_to')})
                                     {budget}
                                   </button>
                                 ))}
+                                <div className="relative">
+                                    <Input
+                                        type="text"
+                                        placeholder="Custom Offer"
+                                        value={!budgets.includes(selectedBudget) ? selectedBudget : ""}
+                                        onChange={(e) => setSelectedBudget(e.target.value)}
+                                        className={`w-40 h-[38px] rounded-full bg-white/5 border-white/10 text-white text-sm px-4 focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/50 transition-all ${
+                                            !budgets.includes(selectedBudget) && selectedBudget !== "" ? "border-blue-500/50 bg-blue-500/10" : ""
+                                        }`}
+                                    />
+                                </div>
                              </div>
                           </div>
 
