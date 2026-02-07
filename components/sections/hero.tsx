@@ -8,7 +8,7 @@ import { ArrowRight } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden pt-32 pb-32">
+    <section className="relative flex min-h-screen items-center justify-center overflow-hidden pt-24 pb-20">
       {/* Background Elements */}
       <div className="absolute inset-0 z-0 select-none pointer-events-none">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/20 via-black to-black" />

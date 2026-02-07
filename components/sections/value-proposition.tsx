@@ -29,7 +29,7 @@ const pillars = [
 
 export function ValueProposition() {
   return (
-    <section className="py-24 sm:py-32">
+    <section className="py-16 sm:py-24">
       <Container>
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
           {pillars.map((pillar, index) => (

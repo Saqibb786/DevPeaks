@@ -27,7 +27,7 @@ const featuredProjects = [
 
 export function FeaturedWork() {
   return (
-    <section className="py-24 bg-black relative">
+    <section className="py-20 bg-black relative">
        {/* Background gradient */}
        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-900/10 rounded-full blur-[120px] pointer-events-none" />
 
@@ -74,7 +74,7 @@ export function FeaturedWork() {
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.2 }}
                 >
-                    <Link href="/projects" className="block group">
+                    <div className="block group cursor-default">
                         <div className={`relative overflow-hidden rounded-3xl aspect-[16/9] mb-6 border border-white/10 bg-gradient-to-br ${project.color}`}>
                             {/* Placeholder for actual image or creative abstract art */}
                             <div className="absolute inset-0 flex items-center justify-center">
@@ -83,10 +83,6 @@ export function FeaturedWork() {
                             
                             {/* Hover Overlay */}
                             <div className="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                            
-                            <div className="absolute top-4 right-4 bg-black/40 backdrop-blur-md rounded-full p-2 border border-white/10 group-hover:bg-blue-600 group-hover:border-blue-500 transition-colors">
-                                <ArrowUpRight className="w-5 h-5 text-white" />
-                            </div>
                         </div>
                         
                         <div className="space-y-3">
@@ -100,7 +96,7 @@ export function FeaturedWork() {
                             </div>
                             <p className="text-gray-400 line-clamp-2">{project.description}</p>
                         </div>
-                    </Link>
+                    </div>
                 </motion.div>
             ))}
         </div>

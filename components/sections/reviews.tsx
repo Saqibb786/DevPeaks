@@ -40,7 +40,7 @@ const reviews = [
 
 export function Reviews() {
   return (
-    <section className="py-24 overflow-hidden border-y border-white/5 bg-black/20">
+    <section className="py-16 overflow-hidden border-y border-white/5 bg-black/20">
       <Container className="mb-12 text-center">
         <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
           Loved by <span className="text-blue-500">Innovators</span>

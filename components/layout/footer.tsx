@@ -4,7 +4,7 @@ import { MapPin, Mail, Phone } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-black/90 py-12 md:py-16">
+    <footer className="border-t border-white/10 bg-black/90 py-8 md:py-12">
       <Container>
         <div className="grid gap-8 md:grid-cols-4 lg:grid-cols-5">
           <div className="md:col-span-2">
@@ -69,7 +69,7 @@ export function Footer() {
           </div>
         </div>
         
-        <div className="mt-12 border-t border-white/5 pt-8 text-center text-xs text-gray-500">
+        <div className="mt-8 border-t border-white/5 pt-6 text-center text-xs text-gray-500">
           © {new Date().getFullYear()} DevPeaks. All rights reserved.
         </div>
       </Container>

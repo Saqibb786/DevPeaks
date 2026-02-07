@@ -7,7 +7,7 @@ import { ArrowRight } from "lucide-react";
 
 export function CTA() {
   return (
-    <section className="py-24">
+    <section className="py-16">
       <Container>
         <div className="relative overflow-hidden rounded-3xl bg-blue-600 px-6 py-20 text-center shadow-2xl sm:px-12 sm:py-32">
           {/* Background pattern */}
