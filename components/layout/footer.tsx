@@ -28,8 +28,8 @@ export function Footer() {
               <li className="flex items-center gap-3 text-gray-400">
                 <Phone className="w-5 h-5 text-blue-500 shrink-0" />
                 <div className="flex flex-col">
-                  <a href="tel:+923143147711" className="hover:text-white transition-colors">
-                    +92 314 3147711
+                  <a href="tel:+923120733183" className="hover:text-white transition-colors">
+                    +92 312 0733183
                   </a>
                   <a href="tel:+923426621797" className="hover:text-white transition-colors">
                     +92 342 6621797
@@ -62,9 +62,8 @@ export function Footer() {
           <div>
             <h4 className="mb-4 text-sm font-semibold text-white">Socials</h4>
              <ul className="space-y-2 text-sm text-gray-400">
-              <li><a href="https://instagram.com/devpeaks" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</a></li>
-              <li><a href="https://facebook.com/devpeaks" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Facebook</a></li>
-              <li><a href="https://linkedin.com/company/devpeaks" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a></li>
+              <li><a href="https://www.instagram.com/devpeaks26?igsh=a2lrZmo3bjV2OG03" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</a></li>
+              <li><a href="https://www.facebook.com/share/1a3Uiv2XP4/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Facebook</a></li>
             </ul>
           </div>
         </div>
