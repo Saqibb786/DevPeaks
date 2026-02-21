@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { PremiumGradientButton } from "@/components/ui/premium-gradient-button";
@@ -37,10 +38,16 @@ export function Navbar() {
       )}
     >
       <Container className="flex items-center justify-between">
-        <Link href="/" className="text-2xl font-bold tracking-tighter text-white z-50 relative">
-          DevPeaks<span className="text-blue-500">.</span>
+        <Link href="/" className="z-50 relative flex items-center">
+          <Image 
+            src="/images/devpeaks-vector-logo.svg" 
+            alt="DevPeaks Logo" 
+            width={100} 
+            height={25} 
+            className="w-[60px] md:w-[80px] h-auto object-contain"
+            priority
+          />
         </Link>
-        
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "@/components/ui/container";
 import { MapPin, Mail, Phone } from "lucide-react";
 
@@ -8,8 +9,14 @@ export function Footer() {
       <Container>
         <div className="grid gap-8 md:grid-cols-4 lg:grid-cols-5">
           <div className="md:col-span-2">
-            <Link href="/" className="text-2xl font-bold tracking-tighter text-white">
-              DevPeaks<span className="text-blue-500">.</span>
+            <Link href="/" className="inline-flex items-center">
+              <Image 
+                src="/images/devpeaks-vector-logo.svg" 
+                alt="DevPeaks Logo" 
+                width={120} 
+                height={30} 
+                className="w-[80px] md:w-[100px] h-auto object-contain"
+              />
             </Link>
             <p className="mt-4 max-w-xs text-sm text-gray-400">
               Premium digital solutions for ambitious brands. We build the future of the web.
